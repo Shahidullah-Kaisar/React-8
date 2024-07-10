@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from '../Link/Link';
 import { IoMdMenu} from "react-icons/io";
 import { ImCross } from "react-icons/im";
-
+import { Circles } from 'react-loader-spinner' //react awsome components(8-44-8)
 const Navbar = () => {
 
     const [open, setOpen] = useState(false)
@@ -18,7 +18,24 @@ const Navbar = () => {
         <>
             
             <nav className='bg-green-500 p-6 fixed w-full'>
-                <h1 className='text-3xl text-red-700'>Jahangirnagar University</h1>
+
+                <div className='flex'>
+                    <h1 className='text-3xl text-red-700'>Jahangirnagar University</h1>
+
+                    <span className='ml-6'>
+                        <Circles
+                            height="40"
+                            width="40"
+                            color="#7C277A"
+                            ariaLabel="circles-loading"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                        />
+                    </span>
+                    
+                </div>
+                
                 <div className='md:hidden text-3xl flex justify-end' onClick={() => setOpen(!open)}>
                     {
                         open === true ? <ImCross/> : <IoMdMenu/>
